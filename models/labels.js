@@ -1,5 +1,5 @@
 const mongoose      = require('mongoose')
-const issueSchema   = new mongoose.Schema({
+const labelSchema   = new mongoose.Schema({
     name: {
         type: String,
         requied: true,
@@ -16,5 +16,5 @@ const issueSchema   = new mongoose.Schema({
 {
     timestamps: true
 })
-const Issue = mongoose.model("Issue", issueSchema);
-module.exports = Issue;
+const label = mongoose.model("label", labelSchema);
+module.exports = label;

@@ -8,10 +8,10 @@ const issueSchema   = new mongoose.Schema({
         type: String,
         requied: true,
     },
-    label: {
+    label: [{
         type: String,
         requied: true,
-      },
+      }],
     description: {
         type: String,
     },

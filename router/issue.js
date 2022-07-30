@@ -7,5 +7,10 @@ const db       = require('../config/mongoose');
 const issueController = require('../controllers/issue_controller');
 console.log('router loaded2');
 
-router.get('/issue/',issueController.issueList);
+//router.get('/issue/',issueController.issueList);
+app.get('/issue/:id', function(req, res) {
+    res.send("tagId is set to " + req.params.id);
+  });
+
+  
 module.exports = router;
