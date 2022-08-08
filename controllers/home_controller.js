@@ -12,6 +12,10 @@ module.exports.project = function(req,res){
     })
 }
 
+//view create form
+module.exports.create = function(req,res){
+    res.render('../view/create_project');
+}
 //create project
 module.exports.add_project = function(req,res){
     Project.create({ 
@@ -19,6 +23,7 @@ module.exports.add_project = function(req,res){
         author          : req.body.author,
         description     : req.body.description
     }, function(err, newTask){
+        console.log(newTask);
         if(err){
             console.log('error in creating a contact');
             return;

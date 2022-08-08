@@ -1,6 +1,5 @@
-const express  = require('express');
-const router   = express.Router();
-const app      = express();
+const express         = require('express');
+const router          = express.Router();
 const db       = require('../config/mongoose');
 
 //controller for listing
@@ -8,7 +7,7 @@ const homeController  = require('../controllers/home_controller.js');
 
 //router
 router.get('/',homeController.project);
-//router.get('/create',homeController.create);
+router.get('/create',homeController.create);
 router.post('/add_project', homeController.add_project);
 router.get('/:id/edit',homeController.editProject); 
 

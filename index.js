@@ -13,6 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('assets'));
 
 app.use('/',router)
+//app.use('/issue',require('./router/issue'));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
