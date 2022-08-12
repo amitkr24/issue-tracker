@@ -8,17 +8,21 @@ const issueSchema   = new mongoose.Schema({
         type: String,
         requied: true,
     },
-    label: [{
-        type: String,
-        requied: true,
-      }],
     description: {
         type: String,
     },
+    project_id: {
+        type: String,
+    },
+    label:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref :'label'
+    }],
     projects: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Project'
     }
+    
 },
 {
     timestamps: true

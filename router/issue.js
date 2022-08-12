@@ -9,9 +9,9 @@ console.log('router loaded2');
 
 //issue router
 
-router.get('/:id',issueController.issueList);
+router.all('/:id',issueController.index);
+//router.post('/filter/:id',issueController.filter);
 router.get('/create/:id',issueController.issueCreate);
-router.post('/issue/add_issue/', issueController.addIssue);
+router.post('/issue/add_issue', issueController.addIssue);
 
-  
 module.exports = router;

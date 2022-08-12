@@ -4,14 +4,14 @@ const labelSchema   = new mongoose.Schema({
         type: String,
         requied: true,
       },
-    projects: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Project'
+    message: {
+        type: String,
+        requied: true,
     },
-    issues: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Issue'
-    }
+    issue:{
+        type    : mongoose.Schema.Types.ObjectId,
+        ref     : 'Issue' 
+    },
 },
 {
     timestamps: true

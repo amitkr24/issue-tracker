@@ -8,20 +8,20 @@ module.exports.project = function(req,res){
             console.log('error in fetching contact from db');
             return ;
         }
-        return res.render('../view/index',{data:projects});
+        return res.render('../view/project/index',{data:projects});
     })
 }
 
 //view create form
 module.exports.create = function(req,res){
-    res.render('../view/create_project');
+    res.render('../view/project/create_project');
 }
 //create project
 module.exports.add_project = function(req,res){
     Project.create({ 
-        project_name    : req.body.project_name,
-        author          : req.body.author,
-        description     : req.body.description
+        name         : req.body.project_name,
+        author       : req.body.author,
+        description  : req.body.description
     }, function(err, newTask){
         console.log(newTask);
         if(err){
@@ -42,13 +42,13 @@ module.exports.add_project = function(req,res){
             console.log('error in fetching contact from db');
             return ;
         }
-        return res.render('../view/edit_project',{project:projects});
+        return res.render('../view/project/edit_project',{project:projects});
     })
  }
  // delete project
  module.exports.deleteProject = function(req,res){
     let tid = req.params.id;
-    console.log(tid);
+  
 
     Project.findByIdAndDelete(tid, function(err){
         if(err){

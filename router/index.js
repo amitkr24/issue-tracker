@@ -7,9 +7,9 @@ console.log('router loaded');
 
 router.use('/',require('./project'));
 router.use('/issue',require('./issue'));
+router.use('/label',require('./label'));
 
 //project router
-
 
 // router.get('/',homeController.project);
 // router.get('/create',homeController.create);

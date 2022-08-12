@@ -11282,3 +11282,13 @@ body.sidebar-toggled footer.sticky-footer {
 .form-content{
   margin: 30px;
 }
+
+/** select2 css */
+span.select2-selection__choice__remove {
+  color: #ffff !important;
+}
+li.select2-selection__choice {
+  background-color: #3ac6e0 !important;
+  color: #ffff;
+  border: 1px solid #0ed0e9 !important;
+}
