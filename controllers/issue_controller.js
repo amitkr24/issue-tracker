@@ -8,8 +8,8 @@ module.exports.index = function(req,res){
     let name        = req.body.title;
     let description = req.body.description;
     let author      = req.body.author;
-    let label      = req.body.label;
-    var obj = {'project_id':id};
+    let label       = req.body.label;
+    var obj         = {'project_id':id};
    
     if(name){
         obj["name"] = name.trim();
@@ -28,9 +28,12 @@ module.exports.index = function(req,res){
             console.log('error in fetching contact from db');
             return ;
         }
-        console.log(Issues);
-        res.render('../view/issue/index',{issues:Issues,id:id})
-        }).populate('label').sort({"updatedAt":-1})
+        labels.find(obj,function(err,label){
+            console.log(Issues);
+            res.render('../view/issue/index',{issues:Issues,id:id,label:label})
+        })
+       
+    }).populate('label').sort({"updatedAt":-1})
 }
 module.exports.issueCreate = function(req,res){
     let project_id = req.params.id;[]
