@@ -1,11 +1,10 @@
 const express       = require('express')
 const app           = express()
-const port          = 8000
 const router        = require('./router/index');
 var path            = require('path');
 const bodyParser    = require("body-parser");
 const labels        = require('./controllers/label_controller')
-
+const PORT = process.env.PORT || 8000; //port on which server runs
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
 //set ejs template
@@ -31,6 +30,6 @@ return myarr;
 
 //app.use('/issue',require('./router/issue'));
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Example app listening on port ${port}`)
 })
