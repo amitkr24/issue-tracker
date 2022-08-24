@@ -1,4 +1,4 @@
-const Project       = require('../models/project');
+const Project  = require('../models/project'); // include project model
 
 //get all project
 module.exports.project = function(req,res){
@@ -29,7 +29,7 @@ module.exports.add_project = function(req,res){
             return;
         }
         console.log('*******', newTask);
-        return res.redirect('back');
+        return res.redirect('/');
     });
  }
  
@@ -42,21 +42,29 @@ module.exports.add_project = function(req,res){
             console.log('error in fetching contact from db');
             return ;
         }
-        return res.render('../view/project/edit_project',{project:projects});
+        return res.render('../view/project/edit_project',{project:projects,id:id});
+    })
+ }
+
+ //update project
+ module.exports.updateProject = function(req,res){
+    let id = req.body.projectId;
+    let data = req.body;
+    Project.findByIdAndUpdate({'id':id}, { $pull: {data}},function(err,project){
+        console.log(project);
+        return res.redirect('back');
     })
  }
  // delete project
  module.exports.deleteProject = function(req,res){
     let tid = req.params.id;
-  
-
     Project.findByIdAndDelete(tid, function(err){
         if(err){
             console.log('error in deleting in object from database');
             return;
         }
     });
-    return res.redirect('back');
+    return res.redirect('/');
  }
 
  

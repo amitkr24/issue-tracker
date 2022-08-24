@@ -67,7 +67,9 @@
                     <div class="card shadow mb-4">
                         <div class="card-body">
                             <div class="form-content">
-                                <form method="post" action="./add_project">
+                                <!-- form start -->
+                                <form method="post" action="/<%=id%>/update_project">
+                                    <input type="hidden" name="projectId" value="<%=id%>">
                                     <div class="form-group">
                                       <label for="exampleFormControlInput1">Project Name *</label>
                                       <input type="text" class="form-control" id="project" placeholder="Project Name" name="name"  value="<%=project.name%>" required/>
@@ -82,6 +84,7 @@
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
+                                <!-- form end -->
                             </div>
                         </div>
                     </div>

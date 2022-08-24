@@ -1,5 +1,5 @@
-const Issue       = require('../models/issue');
-const labels      = require('../models/labels');
+const Issue       = require('../models/issue'); // include model issue
+const labels      = require('../models/labels'); // include model labels
 
 
 //get all issue
@@ -10,7 +10,8 @@ module.exports.index = function(req,res){
     let author      = req.body.author;
     let label       = req.body.label;
     var obj         = {'project_id':id};
-   
+
+   // create object for filtering data
     if(name){
         obj["name"] = name.trim();
     }
@@ -22,12 +23,14 @@ module.exports.index = function(req,res){
     }
     if(label){
         obj["label"] = label;
-    }  
+    } 
+    // fetch record 
     Issue.find(obj,function(err,Issues){
         if(err){
             console.log('error in fetching contact from db');
             return ;
         }
+        // fetch all labels to show in filter form
         labels.find(obj,function(err,label){
             console.log(Issues);
             res.render('../view/issue/index',{issues:Issues,id:id,label:label})
@@ -35,6 +38,8 @@ module.exports.index = function(req,res){
        
     }).populate('label').sort({"updatedAt":-1})
 }
+
+// issue create 
 module.exports.issueCreate = function(req,res){
     let project_id = req.params.id;[]
     labels.find({},function(err,label){
@@ -65,6 +70,8 @@ module.exports.issueCreate = function(req,res){
 //     });
 //     //console.log(message);
 // }
+
+// add issue after form submit
 module.exports.addIssue = function(req,res){
     let issueData = req.body;
     console.log(req.body.label);
@@ -80,7 +87,8 @@ module.exports.addIssue = function(req,res){
             return;
         }
         console.log('*******', issue_data);
-        return res.redirect('back');    
+        console.log(issue_data.id);
+        return res.redirect('/issue/'+issue_data.project_id);    
     });
     //console.log(message);
 }
