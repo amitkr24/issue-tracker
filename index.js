@@ -33,6 +33,9 @@ return myarr;
 
 //app.use('/issue',require('./router/issue'));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
+app.listen(process.env.PORT, function() {
+  console.log("Server started on port : "+process.env.PORT);
+});
