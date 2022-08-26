@@ -1,12 +1,13 @@
 const express       = require('express')
 const app           = express()
+
 const router        = require('./router/index');
 var path            = require('path');
 const bodyParser    = require("body-parser");
 const labels        = require('./controllers/label_controller')
-//const port          = process.env.PORT || 8000; //port on which server runs
-const port          = require("dotenv").config();
-
+const port          = process.env.PORT || 8000; //port on which server runs
+// require('dotenv').config();
+// const port = process.env.DB_PORT
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
@@ -33,9 +34,6 @@ return myarr;
 
 //app.use('/issue',require('./router/issue'));
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
-app.listen(process.env.PORT, function() {
-  console.log("Server started on port : "+process.env.PORT);
-});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
