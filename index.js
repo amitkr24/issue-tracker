@@ -30,6 +30,7 @@ app.locals.copyrights=() =>{
 })
 //console.log(myarr);
 return myarr;
+
 };
 
 //app.use('/issue',require('./router/issue'));
