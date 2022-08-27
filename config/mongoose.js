@@ -1,6 +1,6 @@
 const mongoose = require('mongoose'); // momgoose required
-require('dotenv').config();
-const database = process.env.DB_URL
+// require('dotenv').config();
+ const database = process.env.DB_URL
 
 mongoose.connect(database); 
 //mongoose.connect('mongodb://localhost/issueTracker'); 
