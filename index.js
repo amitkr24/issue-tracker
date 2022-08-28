@@ -6,8 +6,6 @@ var path            = require('path');
 const bodyParser    = require("body-parser");
 const labels        = require('./controllers/label_controller')
 const port          = process.env.PORT || 8000; //port on which server runs
-// require('dotenv').config();
-// const port = process.env.DB_PORT
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
