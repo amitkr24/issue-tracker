@@ -1,6 +1,6 @@
-const express         = require('express');
-const router          = express.Router();
-const db       = require('../config/mongoose');
+const express = require('express');
+const router  = express.Router();
+const db      = require('../config/mongoose');
 
 //controller for listing
 const homeController  = require('../controllers/home_controller.js'); // project controller added
