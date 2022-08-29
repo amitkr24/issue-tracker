@@ -5,7 +5,7 @@ const router        = require('./router/index');
 var path            = require('path');
 const bodyParser    = require("body-parser");
 const labels        = require('./controllers/label_controller')
-
+const port          = process.env.PORT || 8000; //port on which server runs
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
@@ -33,7 +33,6 @@ return myarr;
 
 //app.use('/issue',require('./router/issue'));
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log('Server listening on port 3000');
-});
-
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
