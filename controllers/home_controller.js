@@ -61,13 +61,11 @@ module.exports.add_project = function(req,res){
  module.exports.deleteProject = function(req,res){
     let tid = req.params.id;
     Project.findByIdAndDelete(tid, function(err){
-        Project.findByIdAndDelete(tid, function(err){
         if(err){
             console.log('error in deleting in object from database');
             return;
         }
     });
-
     return res.redirect('/');
  }
 
