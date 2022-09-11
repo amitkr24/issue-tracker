@@ -51,26 +51,6 @@ module.exports.issueCreate = function(req,res){
     })
 }
 
-
-
-// module.exports.addIssue = function(req,res){
-//     let issueData = req.body;
-//     let name    = issueData.name;
-//     let message = issueData.author;
-//     labels.create({ 
-//         name    : req.body.name,
-//         message : req.body.author,
-//     }, function(err, issue_data){
-//         if(err){
-//             console.log('error in creating a contact');
-//             return;
-//         }
-//         console.log('*******', issue_data);
-//         return res.redirect('back');    
-//     });
-//     //console.log(message);
-// }
-
 // add issue after form submit
 module.exports.addIssue = function(req,res){
     let issueData = req.body;

@@ -1,9 +1,9 @@
 const Project  = require('../models/project'); // include project model
+const Issue  = require('../models/issue'); // include project model
 
 //get all project
 module.exports.project = function(req,res){
     Project.find({},function(err,projects){
-        //console.log(projects);
         if(err){
             console.log('error in fetching contact from db');
             return ;
@@ -16,6 +16,7 @@ module.exports.project = function(req,res){
 module.exports.create = function(req,res){
     res.render('../view/project/create_project');
 }
+
 //create project
 module.exports.add_project = function(req,res){
     Project.create({ 
@@ -50,20 +51,23 @@ module.exports.add_project = function(req,res){
  module.exports.updateProject = function(req,res){
     let id = req.body.projectId;
     let data = req.body;
-    Project.findByIdAndUpdate({'id':id}, { $pull: {data}},function(err,project){
-        console.log(project);
-        return res.redirect('back');
+    Project.findByIdAndUpdate(id,data, function(err,updated_data){
+       console.log(updated_data);
+        return res.redirect('/');
     })
  }
+
  // delete project
  module.exports.deleteProject = function(req,res){
     let tid = req.params.id;
     Project.findByIdAndDelete(tid, function(err){
+        Project.findByIdAndDelete(tid, function(err){
         if(err){
             console.log('error in deleting in object from database');
             return;
         }
     });
+
     return res.redirect('/');
  }
 

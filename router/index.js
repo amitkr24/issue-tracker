@@ -1,6 +1,7 @@
 const express         = require('express');
 const router          = express.Router();
-const db              = require('../config/mongoose');
+const db              = require('../config/mongoose'); // included mongooose for 
+
 //controller for project
 const homeController  = require('../controllers/home_controller.js');
 console.log('router loaded');

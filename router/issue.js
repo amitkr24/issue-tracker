@@ -1,7 +1,5 @@
 const express  = require('express');
 const router   = express.Router();
-const app      = express();
-const db       = require('../config/mongoose');
 
 //controller
 const issueController = require('../controllers/issue_controller'); // issue controller added
