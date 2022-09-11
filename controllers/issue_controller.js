@@ -1,7 +1,6 @@
 const Issue       = require('../models/issue'); // include model issue
 const labels      = require('../models/labels'); // include model labels
 
-
 //get all issue
 module.exports.index = function(req,res){
     let id = req.params.id;
@@ -23,7 +22,8 @@ module.exports.index = function(req,res){
     }
     if(label){
         obj["label"] = label;
-    } 
+    }
+
     // fetch record 
     Issue.find(obj,function(err,Issues){
         if(err){
@@ -70,7 +70,6 @@ module.exports.addIssue = function(req,res){
         console.log(issue_data.id);
         return res.redirect('/issue/'+issue_data.project_id);    
     });
-    //console.log(message);
 }
 
 

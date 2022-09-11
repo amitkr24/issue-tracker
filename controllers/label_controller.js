@@ -1,4 +1,5 @@
 const labels  = require('../models/labels'); // require model labels
+
 module.exports.label = function(req,res){
     // fetch labels
     labels.find({},function(err,label){

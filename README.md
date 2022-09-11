@@ -18,13 +18,17 @@ You can add the labels/bugs related to any specific issue all of the issues are 
 
 
 # How to Set up Project in Your Local server
-1st : You copy the git repositories link from my git <a href="https://github.com/amitkr24/issue-tracker">account</a>.
-2nd : Open git bash and clone the repositories
-3rd : Install all dependencies using (npm install) 
-4th : npm start
+1st : You copy the git repositories link from my git <a href="https://github.com/amitkr24/issue-tracker">account</a>. <br>
+2nd : Open git bash and clone the repositories <br>
+3rd : Install all dependencies using (npm install)  <br>
+4th : npm start <br>
 
-Project will run on port 8000
-You can hit this url for homepage : http://localhost:8000/
+Project will run on port 8000 <br>
+You can hit this url for homepage : http://localhost:8000/ <br>
+
+# LINKS
+
+<a href = "https://bugs-tracker.herokuapp.com/"> <b>LIVE PRODUCT</b> </a>  &nbsp; <a href = "https://github.com/amitkr24/issue-tracker"> <b>CODE</b> </a> <br>
 
 # Note
 Before Installation of project must insure that your system have npm ,node, mongodb
